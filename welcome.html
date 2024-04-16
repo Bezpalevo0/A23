@@ -1,0 +1,26 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $name = $_POST["name"];
+    $surname = $_POST["surname"];
+    $street = $_POST["street"];
+    $house_no = $_POST["house_no"];
+    $apartment_no = $_POST["apartment_no"];
+    $city = $_POST["city"];
+    $post_code = $_POST["post_code"];
+    $year_of_birth = $_POST["year_of_birth"];
+
+    // Calculate age
+    $current_year = date("Y");
+    $age = $current_year - $year_of_birth;
+
+    // Display data
+    echo "<h2>Personal Information:</h2>";
+    echo "<p>Name: $name</p>";
+    echo "<p>Surname: $surname</p>";
+    echo "<p>Address: $street $house_no, Apt. $apartment_no, $city, $post_code</p>";
+    echo "<p>Year of Birth: $year_of_birth</p>";
+    echo "<h2>Age:</h2>";
+    echo "<p>$name's age is $age years.</p>";
+}
+?>
